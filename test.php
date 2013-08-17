@@ -12,8 +12,8 @@
 			$this->db->add($data);
 		}
 
-		function save(){
-		
+		function update(){
+			$this->db->save();
 		}
 	}
 
