@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>栏目管理--网站后台管理</title>
+<link href="__PUBLIC__/css/admin_main.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="admin_nav">
+		<ul>
+			<li><a href="__APP__/category/">栏目管理</a></li>
+			<li><a href="__APP__/page/">单页管理</a></li>
+			<li><a href="__APP__/link/">链接管理</a></li>
+			<li><a href="__APP__/article/">文章管理</a></li>
+			<li><a href="__APP__/message/">留言管理</a></li>
+			<li><a href="__APP__/index/logout">安全退出</a></li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+	<div class="admin_main">
+		<div class="admin_left"></div>
+		<div class="admin_right">
+			<form name="link_info" id="upload" method="post" enctype="multipart/form-data" action="__ACTION__">
+				栏目：<select name="cid">
+							<foreach name="cat_info" item="vo">
+								<if condition="$vo.cat_type eq 'link'">
+									<option value="{$vo.cid}">{$vo.cat_name}</option>
+									<else/>
+								</if>
+							</foreach>
+						</select>
+				<br/>网站名：<input type="text" name="link_name" value="{$edit_info['link_name']}" /><br/>
+				URL地址：<input type="text" name="link_url" value="{$edit_info['link_url']}" /><br/>
+				Logo：<input type="file" name="logo" value="{$edit_info['link_logo']}"/><br/>
+				备注：<input type="text" name="link_other" value="{$edit_info['link_other']}" /><br/>
+				排序：<input type="text" name="link_order" value="{$edit_info['link_order']}" /><br/>
+				<input type="submit" name="submit" value="保存" />
+			</form>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="admin_footer"></div>
+</body>
+</html>

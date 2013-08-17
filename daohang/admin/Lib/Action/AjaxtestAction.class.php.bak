@@ -1,0 +1,17 @@
+<?php
+	class AjaxtestAction extends Action{
+		function index(){
+			if($_GET['uname']){
+				$data['uname']=trim(htmlspecialchars($_GET['uname']));
+				$data['upwd']=trim(htmlspecialchars($_GET['upwd']));
+				$this->ajaxReturn($data,"³É¹¦",1);
+			}
+			
+			$this->nowdate=date("Y-m-d H:i:s");
+			$this->display();
+		}
+		function add(){
+			$this->display();
+		}
+	}
+?>

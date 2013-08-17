@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>这是后台的article模块index操作
