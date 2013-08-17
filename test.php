@@ -5,11 +5,11 @@
 			$this->db=M("user");
 		}
 		function index(){
-			$this->db->where("id=1")->select();
+			$this->db->where("pid={$pid}")->select();
 		}
 
 		function add(){
-		
+			$this->db->add($data);
 		}
 
 		function save(){
