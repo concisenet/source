@@ -10,6 +10,10 @@
 		function add(){
 		
 		}
+
+		function edit(){
+		
+		}
 	}
 
 ?>
